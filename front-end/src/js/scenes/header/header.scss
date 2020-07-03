@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.top-navbar {
+  color: #fff;
+  height: $top-navbar-height;
+  line-height: $top-navbar-height;
+  padding: 0 $default-ctnr-padding;
+  background: $svdna-accent-clr-primary;
+  .top-navbar-biz-n-app {
+    display: flex;
+    .top-navbar-divider {
+      margin: 0 10px;
+      font-size: 1.8em;
+      color: #fff;
+    }
+  }
+  .top-navbar-env-select {
+    text-align: center;
+  }
+  .top-navbar-migrate {
+    text-align: right;
+  }
+}

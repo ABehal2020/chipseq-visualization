@@ -1,0 +1,26 @@
+@import "./common.scss";
+
+$app-font-size: 13px;
+$default-ctnr-padding: 1.5em;
+$default-ctnr-margin: 1.5em;
+
+
+$svdna-accent-clr-primary: #1a4372;
+$svdna-menu-selected: #e8e8ea;
+
+$top-navbar-height: 55px;
+$landing-pg-hdr-height: 44px;
+$landing-pg-hdr-font-size: 1em;
+$sidenav-width-collapsed: 55px;
+$sidenav-width-expanded: 180px;
+$sidenav-transition-delay: 0.25s;
+$sidenav-transition-duration: 0.35s;
+
+$svdna-card-shadow: 1px 1px 3px 0 rgba(210, 210, 210, 0.94);
+
+@mixin svdna-card{
+  background-color: #fff;
+  box-shadow: $svdna-card-shadow;
+  transition: box-shadow 0.25s;
+  border-radius: 2px;
+}

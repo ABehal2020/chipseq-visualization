@@ -1,0 +1,109 @@
+/front-end/node_modules/
+
+/back-end/corr_end/.env
+.idea/workspace.xml
+*.pyc
+*~
+/.vscode
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
+/back-end/bedAuto/*
+/back-end/corr_end/bedAuto/*
+/back-end/corr_end/send_values/api/bedAuto/*
+/.idea/*
+
+# Created by https://www.gitignore.io/api/pycharm
+# Edit at https://www.gitignore.io/?templates=pycharm
+
+### PyCharm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+/back-end/.idea/**/workspace.xml
+/back-end/.idea/**/tasks.xml
+/back-end/.idea/**/usage.statistics.xml
+/back-end/.idea/**/dictionaries
+/back-end/.idea/**/shelf
+
+# Generated files
+/back-end/.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+/back-end/.idea/**/dataSources/
+/back-end/.idea/**/dataSources.ids
+/back-end/.idea/**/dataSources.local.xml
+/back-end/.idea/**/sqlDataSources.xml
+/back-end/.idea/**/dynamic.xml
+/back-end/.idea/**/uiDesigner.xml
+/back-end/.idea/**/dbnavigator.xml
+
+# Gradle
+/back-end/.idea/**/gradle.xml
+/back-end/.idea/**/libraries
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+# /back-end/.idea/modules.xml
+# /back-end/.idea/*.iml
+# /back-end/.idea/modules
+# /back-end/*.iml
+# /back-end/*.ipr
+
+# CMake
+cmake-build-*/
+
+# Mongo Explorer plugin
+/back-end/.idea/**/mongoSettings.xml
+
+# File-based project format
+/back-end/*.iws
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+/back-end/.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+/back-end/.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Editor-based Rest Client
+/back-end/.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+/back-end/.idea/caches/build_file_checksums.ser
+
+### PyCharm Patch ###
+# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
+
+# /back-end/*.iml
+# modules.xml
+# /back-end/.idea/misc.xml
+# *.ipr
+
+# Sonarlint plugin
+/back-end/.idea/**/sonarlint/
+
+# SonarQube Plugin
+/back-end/.idea/**/sonarIssues.xml
+
+# Markdown Navigator plugin
+/back-end/.idea/**/markdown-navigator.xml
+/back-end/.idea/**/markdown-navigator/
+
+# End of https://www.gitignore.io/api/pycharm
