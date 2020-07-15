@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python3 compare_md5.py --keys_to_inspect trim.trimmed_fastq --metadata_json test_trim.metadata.json --reference_json test/test_task/ref_output/test_trim_output_md5.json --outfile result.json
+    volumes:
+      - .:/usr/src/app

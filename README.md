@@ -67,3 +67,4 @@ $ python manage.py runserver
 
 # Troubleshooting (Cherry Lab Members With Access to Cherry Lab AWS only)
 Occasionally, if the correlations request to the back end fails or if multiple requests are submitted at once, the AWS lambda function might crash. Go to the SQS page and check "jaccard3-success" and "jaccard3-failure" and "jaccard3-unprocessed"; make sure all 3 SQS queues are cleared before submitting a new request.
+
