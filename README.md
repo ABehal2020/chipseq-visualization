@@ -4,7 +4,9 @@
 
 // navigate to front-end directory
 
+```
 $ npm install
+```
 
 # Back End Setup
 1. Make sure Postgres is installed.
@@ -49,21 +51,28 @@ source_profile = default
 # Running the application
 Termminal 1 (running React JS front end):
 
+```
 $ open -a /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome dev session" --disable-web-security
+```
 
 // navigate to front-end directory
 
+```
 $ nvm use v11.15.0
-
 $ npm start
+```
 
 Terminal 2 (running Python Django server back end):
 
+```
 $ conda activate {NAME OF CONDA ENVIRONMENT WITH PYTHON DEPENDENCIES INSTALLED}
+```
 
 // navigate to the back-end/corr-end sub-directory
 
+```
 $ python manage.py runserver
+```
 
 # Troubleshooting (Cherry Lab Members With Access to Cherry Lab AWS only)
 Occasionally, if the correlations request to the back end fails or if multiple requests are submitted at once, the AWS lambda function might crash. Go to the SQS page and check "jaccard3-success" and "jaccard3-failure" and "jaccard3-unprocessed"; make sure all 3 SQS queues are cleared before submitting a new request.
