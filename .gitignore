@@ -1,3 +1,12 @@
+/bigbed-jaccard/.mypy_cache
+/bigbed-jaccard/.vscode
+/bigbed-jaccard/venv
+/bigbed-jaccard/__pycache__/*
+/bigbed-jaccard/target
+/bigbed-jaccard/*.pyc
+# Too big for git, ~100 MB
+/bigbed-jaccard/data/jaccard.tsv
+
 /front-end/node_modules/
 
 /back-end/corr_end/.env
