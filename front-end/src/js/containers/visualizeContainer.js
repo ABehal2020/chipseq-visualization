@@ -29,6 +29,8 @@ export const VisualizeContainer = () => {
 
     const [assemblyName, setAssemblyName] = useState("GRCh38");
 
+    const [fileInputName, setFile] = useState("bed");
+
     const [outputType, setOutputType] = useState("replicated peaks");
 
     console.log(encodeLink);
@@ -53,6 +55,12 @@ export const VisualizeContainer = () => {
         setAssemblyName(event);
     }
 
+    const handleChangeFile = (event) => {
+        console.log("handle change file");
+        console.log(event);
+        setFile(event);
+    }
+
     const handleChangeOutputType = (event) => {
         console.log("handle change output type");
         console.log(event);
@@ -64,9 +72,13 @@ export const VisualizeContainer = () => {
         const submittedLink = encodeLink;
         const submittedExp = experimentName;
         const subbmittedAssembly = assemblyName;
+        const submittedFile = fileInputName;
         const submittedOutputType = outputType;
         console.log(submittedLink);
-        console.log(submittedExp)
+        console.log(submittedExp);
+        console.log("submitted file type");
+        console.log(submittedFile);
+        console.log("end")
         console.log(dispatch);
         startSpinner(dispatch);
         visualizeAction(dispatch, submittedLink, submittedExp, subbmittedAssembly, submittedOutputType);
@@ -105,9 +117,17 @@ export const VisualizeContainer = () => {
                             <Checkbox value="hg19">hg19</Checkbox>
                         </Checkbox.Group>
                     </Form.Item>
+                    <Form.Item label="File Input Format" name="fileInputFormat">
+                        <Checkbox.Group defaultValue={["bed"]} onChange={handleChangeFile}>
+                            <Checkbox value="bed">Bed</Checkbox>
+                            <Checkbox value="bigBed">Big Bed</Checkbox>
+                        </Checkbox.Group>
+                    </Form.Item>
+                    {/*
                     <Form.Item label="Default File Format" name="bedFileFormat">
                         <p>bed narrowPeak</p>
                     </Form.Item>
+                    */}
                     <Form.Item label="Output Type" name="output">
                         <Checkbox.Group defaultValue={["replicated peaks"]} onChange={handleChangeOutputType}>
                             <Checkbox value="peaks">Individual Peaks</Checkbox>
