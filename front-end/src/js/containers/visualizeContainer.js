@@ -19,7 +19,8 @@ export const VisualizeContainer = () => {
         }
     }
 
-    const [encodeLink, setEncodeLink] = useState("https://www.encodeproject.org/search/?searchTerm=H3K4ME3&type=Experiment&replication_type=isogenic&assembly=GRCh38&award.rfa=ENCODE4&format=json");
+    // const [encodeLink, setEncodeLink] = useState("https://www.encodeproject.org/search/?searchTerm=H3K4ME3&type=Experiment&replication_type=isogenic&assembly=GRCh38&award.rfa=ENCODE4&format=json");
+    const [encodeLink, setEncodeLink] = useState("https://www.encodeproject.org/search/?searchTerm=H3K4ME3&type=Experiment&replication_type=isogenic&award.rfa=ENCODE4&assay_title=Histone+ChIP-seq&assembly=GRCh38&format=json");
 
     let randExpName = uuidv4();
     console.log("rand exp name")
@@ -81,7 +82,7 @@ export const VisualizeContainer = () => {
         console.log("end")
         console.log(dispatch);
         startSpinner(dispatch);
-        visualizeAction(dispatch, submittedLink, submittedExp, subbmittedAssembly, submittedOutputType);
+        visualizeAction(dispatch, submittedLink, submittedExp, subbmittedAssembly, submittedOutputType, submittedFile);
     }
 
     let testLoading = true;

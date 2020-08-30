@@ -33,8 +33,13 @@ def postLink(request):
     exp_name = requestDict["experimentName"]
     assembly = requestDict["assembly"]
     outputType = requestDict["outputType"]
+    fileInput = requestDict["fileInput"]
 
-    args = [[link], exp_name, assembly, outputType]
+    print("FILE INPUT ALERT")
+    print(fileInput)
+    print("FILE INPUT ALERT END")
+
+    args = [[link], exp_name, assembly, outputType, fileInput]
     print(link)
     print(exp_name)
     print(assembly)

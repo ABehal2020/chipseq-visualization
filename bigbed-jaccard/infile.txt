@@ -1,0 +1,15 @@
+https://encode-public.s3.amazonaws.com/2020/08/24/b42a1138-f364-46db-8804-f19e99c4cf27/ENCFF456SQU.bigBed
+https://encode-public.s3.amazonaws.com/2020/08/24/40d7579c-6284-4591-92fa-1649c66bfcf3/ENCFF431SIH.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/03/5515eaca-abc5-4b59-8e48-83449ae4bf36/ENCFF305HHN.bigBed
+https://encode-public.s3.amazonaws.com/2018/12/07/56d32d11-4966-4909-8ee3-81feedf248e5/ENCFF168FWU.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/04/4f5b5651-588a-4fd8-bdda-52da52995f0c/ENCFF995JWX.bigBed
+https://encode-public.s3.amazonaws.com/2019/02/01/ccfcc085-fdbb-4198-8360-341e9bcd1781/ENCFF028ODQ.bigBed
+https://encode-public.s3.amazonaws.com/2018/12/14/5eaca3d0-ea13-473b-a1ea-1d557f6acce1/ENCFF566EAF.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/07/f185bf25-eeba-47d9-9fb4-c8723a828c35/ENCFF941GWK.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/07/12db6a46-9ae7-48a0-b001-959e4e255dcd/ENCFF313TIQ.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/09/547bda30-d910-4e8d-8585-7054928fae22/ENCFF044RHX.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/09/634a590a-8016-4111-9a0f-2b2869271df4/ENCFF076ZZG.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/07/7291f55e-c8cb-4e9f-9567-7fc7463fd82c/ENCFF069PVD.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/07/1e045504-3559-442f-8495-5b6dfc50fdaa/ENCFF965LQM.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/07/995420b9-c663-495d-9c3e-a902b69b510d/ENCFF813EIZ.bigBed
+https://encode-public.s3.amazonaws.com/2019/09/07/4f863ae0-7b65-46aa-a639-ff7f0c13baa7/ENCFF042ADF.bigBed

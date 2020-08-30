@@ -10,7 +10,7 @@ outputType = []
 
 def parseSearch(url):
     download_time = time.time()
-    # url = 'https://www.encodeproject.org/search/?searchTerm=H3K4ME3&type=Experiment&replication_type=isogenic&assembly=GRCh38&award.rfa=ENCODE4&format=json'
+    # url = 'https://www.encodeproject.org/search/?searchTerm=H3K4ME3&type=Experiment&replication_type=isogenic&award.rfa=ENCODE4&assay_title=Histone+ChIP-seq&assembly=GRCh38&format=json'
     encsrLinkList = []
     encsrNameList = []
 
@@ -83,11 +83,13 @@ def sequential_encsr_encff(args):
         print(name)
         print(link)
 
-def set_globals(assemblyParam, outputTypeParam):
+def set_globals(assemblyParam, outputTypeParam, fileTypeParam):
     global assembly
     global outputType
+    global fileType
     assembly = assemblyParam
     outputType = outputTypeParam
+    fileType = fileTypeParam
 
 # multi-threaded
 def multi_encsr_encff(*file_path):
@@ -109,43 +111,36 @@ def multi_encsr_encff(*file_path):
     info_filtered = encsr_dict[file_path]['files']
     info_more = encsr_dict[file_path]
 
-    '''
-    for element in range(len(info_filtered)):
-        if info_filtered[element]['file_type'] == 'bed narrowPeak' and info_filtered[element]['output_type'] == 'replicated peaks':
-            if info_filtered[element]['assembly'] == 'GRCh38':
-                encff_names.append(info_filtered[element]['s3_uri'][-18:])
-                encff_links.append(info_filtered[element]['s3_uri'])
-    '''
-
     if type(assembly) != list:
         assembly = [assembly]
 
     if type(outputType) != list:
         outputType = [outputType]
 
-    '''
-    print("assembly")
-    print(assembly)
-    print("output type")
-    print(outputType)
-    '''
+    # bed files getting s3_uri
+    if fileType == "bed":
+        for element in range(len(info_filtered)):
+            for assemblyElement, outputTypeElement in zip(assembly, outputType):
+                if info_filtered[element]['file_type'] == 'bed narrowPeak' and info_filtered[element]['output_type'] == outputTypeElement:
+                    if info_filtered[element]['assembly'] == assemblyElement:
+                        encff_names.append(info_filtered[element]['s3_uri'][-18:])
+                        encff_links.append(info_filtered[element]['s3_uri'])
+                        encff_label = info_filtered[element]['s3_uri'][-18:] + ' ' + info_more['biosample_ontology']['term_name'] + ' ' + info_more['target']['label']
+                        encff_labels.append(encff_label)
 
-    for element in range(len(info_filtered)):
-        for assemblyElement, outputTypeElement in zip(assembly, outputType):
-            if info_filtered[element]['file_type'] == 'bed narrowPeak' and info_filtered[element]['output_type'] == outputTypeElement:
-                if info_filtered[element]['assembly'] == assemblyElement:
-                    # print(info_filtered[element]['s3_uri'][-18:])
-                    encff_names.append(info_filtered[element]['s3_uri'][-18:])
-                    encff_links.append(info_filtered[element]['s3_uri'])
-                    # print(info_filtered[element]['biosample_ontology.term_name'][17:-1])
-                    # print(info_filtered[element]['assay_term_name'])
-                    # print(info_filtered[element]['target.label'][9:-1])
-                    # encff_label = info_filtered[element]['s3_uri'][-18:] + ' ' + info_filtered[element]['biosample_ontology'][17:-1] + ' ' + info_filtered[element]['target'][9:-1]
-                    encff_label = info_filtered[element]['s3_uri'][-18:] + ' ' + info_more['biosample_ontology']['term_name'] + ' ' + info_more['target']['label']
-                    # print("encff label")
-                    # print(encff_label)
-                    encff_labels.append(encff_label)
-                    # print(encff_label)
+    # bigbed files getting url
+    if fileType == ['bigBed']:
+        with open('input.txt', 'a+') as f:
+            for element in range(len(info_filtered)):
+                for assemblyElement, outputTypeElement in zip(assembly, outputType):
+                    if info_filtered[element]['file_type'] == 'bigBed narrowPeak' and info_filtered[element]['output_type'] == outputTypeElement:
+                        if info_filtered[element]['assembly'] == assemblyElement:
+                            encff_names.append(info_filtered[element]['s3_uri'][-18:])
+                            f.write(info_filtered[element]['cloud_metadata']['url'] + '\n')
+                            print(info_filtered[element]['cloud_metadata']['url'])
+                            encff_links.append(info_filtered[element]['cloud_metadata']['url'])
+                            encff_label = info_filtered[element]['s3_uri'][-18:] + ' ' + info_more['biosample_ontology']['term_name'] + ' ' + info_more['target']['label']
+                            encff_labels.append(encff_label)
 
     return encff_names, encff_links, encff_labels
 
@@ -180,6 +175,10 @@ def fetch_encsr_encff(args):
 
     print("encff labels")
     print(encff_labels)
+    print("encff names")
+    print(encff_names)
+    print("encff links")
+    print(encff_links)
 
     return encff_links, encff_labels
 
